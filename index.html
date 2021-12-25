@@ -1,0 +1,16 @@
+<html>
+  <head> </head>
+  <body>
+    <p class="result"></p>
+    <p class="result2"></p>
+  </body>
+  <script>
+    const gcd = (...arr) => {
+      const _gcd = (x, y) => (!y ? x : gcd(y, x % y));
+      return [...arr].reduce((a, b) => _gcd(a, b));
+    };
+
+    document.querySelector(".result").innerHTML = gcd(8, 36); // 4
+    document.querySelector(".result2").innerHTML = gcd(...[12, 8, 32]); // 4
+  </script>
+</html>
